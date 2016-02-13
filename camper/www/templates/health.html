@@ -12,8 +12,8 @@
 		<div class="row">
 			<div class="col">
 				<div class="row row-center padding-vertical">
-					<a href="#/next" class="center"><img
-						src="img/subcategory_picture_1.jpeg" width="64" height="64"></a>
+					<img ng-click="showFaq()"
+						src="img/subcategory_picture_1.jpeg" width="64" height="64">
 					<button class="button button-small button-light button-clear"
 						ng-click="playAudio()">
 						<strong class="lettering">شؤون الأمومة</strong>
@@ -55,10 +55,21 @@
 		</div>
 	</div>
 	<div class="col">
-		<div class="card padding">
+		<div class="card padding" ng-show="showHealthTitle">
 			<strong class="item">Health</strong>
 			<div class="item item-text-wrap">This is a basic Card which
 				contains an item that has wrapping text.</div>
+		</div>
+		<div class="card padding" ng-show="showHealthFaq">
+			<ion-item class="item-divider">FAQ</ion-item>
+			<ion-scroll style="height:80%" direction="y">
+				<ion-list>
+					<ion-item class="item-text-wrap" ng-repeat="item in faqList">
+						<strong class="padding">{{item.question}}</strong>
+						<div class="padding">{{item.answer}}</div>
+					</ion-item>
+				</ion-list>
+			</ion-scroll>
 		</div>
 	</div>
 </div>

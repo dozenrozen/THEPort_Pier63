@@ -61,6 +61,21 @@ app
     //    console.log(status);
     //  });
 
+	$scope.showHealthTitle = true;
+	$scope.showHealthFaq = false;
 
+	$scope.showFaq = function() {
+    	$scope.showHealthTitle = false;
+    	$scope.showHealthFaq = true;
+    };
+    
+    var url = (ionic.Platform.isAndroid() ? "/android_asset/www/" : "") + "data/faq.json";
+    $http.get(url).success(function(response){
+        $scope.faqList = response;
+//        alert("success");
+    }).error(function() {
+//    	alert("fail");
+    });
+        
     // Let's mock it up for now
   });
