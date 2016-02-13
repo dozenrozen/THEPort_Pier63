@@ -65,5 +65,5 @@ body .pane, .menu, .view, .list, .item       {
 .card {
 	opacity: .6;
 	border-radius: 25px;
-	height: 80%;
+	height: 80vh;
 }
