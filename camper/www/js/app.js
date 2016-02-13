@@ -30,7 +30,7 @@ var app = angular.module('bridgeItApp', ['ionic', 'ngCordova'])
       .state('health', {
         cache: false,
         url: "/next",
-        templateUrl: "templates/health.hbs",
+        templateUrl: "templates/health.html",
         controller: "healthCtrl"
       });
     $urlRouterProvider.otherwise('/');
